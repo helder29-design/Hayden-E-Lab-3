@@ -1,0 +1,42 @@
+print("Welcome to this awesome calculator you can add, subtract, multiply and divide two numbers ")
+#function to add two numbers
+def add(a, b):
+    print("addition of", a, "and", b, "is", a + b)
+#function to subtract two numbers
+def subtract(a, b):
+    print("subtraction of", a, "and", b, "is", a - b)
+#function to multiply two numbers
+def multiply(a, b):
+    print("multiplication of", a, "and", b, "is", a * b)
+#function to divide two numbers
+def divide(a, b):
+    print("division of", a, "and", b, "is", a / b)
+#repeat until failty input
+while True:
+    user_input = input("Enter what you want to do add(a), subtract(s), multiply(m), divide(d), or quit(q): ").strip().lower()
+
+    if user_input == "q":
+        print("Goodbye!")
+        break
+    else:
+        if user_input not in {"a", "s", "m", "d"}:
+            print("Invalid input. restarting program.")
+            continue
+    try:
+        x = int(input("Enter first number: "))
+        y = int(input("Enter second number: "))
+    except ValueError:
+        print("Invalid number. Exiting program.")
+        break
+    #the thingy to call the function from the input
+    if user_input == "a":
+        add(x, y)
+    elif user_input == "s":
+        subtract(x, y)
+    elif user_input == "m":
+        multiply(x, y)
+    elif user_input == "d":
+        divide(x, y)
+    elif user_input == "q":
+        print("Goodbye!")
+        break
